@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  jenkins-service:
+    container_name: my-jenkins
+    image: edaraanand/jenkins:v1
+    cpus: 0.3
+    mem_limit: 512m
+    ports:
+      - "8091-8096:8080"
+      - "50005-50011:50000"
+    volumes:
+      - jenkins-vol-1:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+       - overlay      
+volumes:
+  jenkins-vol-1:
+    external: true
+    name: jenkins-vol-1
+
+networks:
+  overlay:

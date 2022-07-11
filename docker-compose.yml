@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  service-one:
+    build:
+      context: ./service-1
+    image: edaraanand/service-1:v1
+    # container_name: my-service-1-container
+    cpus: 0.3
+    mem_limit: 256m
+  service-two:
+    build:
+      context: ./service-2
+    image: edaraanand/service-2:v1
+    # container_name: my-service-2-container
+    cpus: 0.3
+    mem_limit: 256m
