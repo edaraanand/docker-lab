@@ -6,13 +6,14 @@ services:
     cpus: 0.3
     mem_limit: 512m
     ports:
-      - "8091-8096:8080"
-      - "50005-50011:50000"
+      - "8085:8080"
+      - "50000:50000"
     volumes:
       - jenkins-vol-1:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-       - overlay      
+       - overlay
+
 volumes:
   jenkins-vol-1:
     external: true
